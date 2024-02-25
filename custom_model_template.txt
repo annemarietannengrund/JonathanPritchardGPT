@@ -1,0 +1,26 @@
+# we create the model from this as base model
+# check "ollm list" for existing models or pull a new one
+FROM mixtral
+
+# we increase the temperature for more creativity
+PARAMETER temperature 1.0
+
+# user defined template
+TEMPLATE """
+{{- if .First }}
+### System:
+{{ .System }}
+{{- end }}
+
+### User:
+{{ .Prompt }}
+
+### Response:
+"""
+
+# we override the default initial system prompt for the model
+SYSTEM """
+You have access to a vectorstore with hundreds of blogpost documents collected from jonathanpritchard.me.
+You act as a scientific, economic, communications, sales professional.
+Answer all questions truthfully and dont make things up, if you dont know say it.
+"""
