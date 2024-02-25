@@ -139,8 +139,8 @@ class JonathanPritchardCrawler(BaseCrawler):
 
     def main(self, startpage=1):
         self.create_folder_structure(self.obsidian_path)
-        #self.iterate_blog_pages(startpage)
-        exit(11)
+        self.iterate_blog_pages(startpage)
+        exit(0)
         # im lazy, here are some hardcoded urls
         urls = [
             'https://www.jonathanpritchard.me/corporate-services/trade-show/',
