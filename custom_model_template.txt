@@ -1,6 +1,6 @@
 # we create the model from this as base model
 # check "ollm list" for existing models or pull a new one
-FROM mixtral
+FROM llama2-uncensored
 
 # we increase the temperature for more creativity
 PARAMETER temperature 1.0
